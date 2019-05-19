@@ -1,9 +1,12 @@
-
-import React from 'react';
+import React from "react";
+import { InputField } from "../../Components";
 
 function LoginScene() {
   return (
-   <h1>Login</h1>
+    <div>
+      <h1>Login</h1>
+      <InputField />
+    </div>
   );
 }
 

@@ -1,12 +1,16 @@
-import React from 'react';
-import {LoginScene} from './Scenes'
+import React from "react";
+import { Provider } from "react-redux";
+
+import { LoginScene } from "./Scenes";
+import { Layout } from "./Components";
+import store from "./store";
 
 function App() {
   return (
-   <div>
-    <h1>Hali</h1>
-    <LoginScene/>
-   </div>
+    <Provider store={store}>
+      <h1>Hali</h1>
+      <Layout component={LoginScene} />
+    </Provider>
   );
 }
 
