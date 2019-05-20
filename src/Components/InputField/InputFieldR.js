@@ -4,7 +4,7 @@ import InputField from "./InputField";
 import { addText } from "../../Redux/InputField1/actions";
 
 const mapDispatchToProps = dispatch => ({
-  write: () => dispatch(addText("Text"))
+  write: text => dispatch(addText(text))
 });
 
 export default connect(

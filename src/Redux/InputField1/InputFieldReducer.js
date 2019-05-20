@@ -1,5 +1,5 @@
 const initialState = {
-  inputField: ""
+  inputField: "h"
 };
 
 const reducer = (state = initialState, action) => {

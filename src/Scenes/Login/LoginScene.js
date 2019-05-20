@@ -1,13 +1,13 @@
 import React from "react";
 import { InputField } from "../../Components";
 
-function LoginScene() {
+const LoginScene = () => {
   return (
     <div>
       <h1>Login</h1>
-      <InputField />
+      <InputField dani={"asasa"} />
     </div>
   );
-}
+};
 
 export default LoginScene;
