@@ -1,13 +1,10 @@
 import { InputField } from "../../../Components";
-
-import { connect } from "react-redux";
 import { addText } from "../../../Redux/InputField1/actions";
+import { wrapComponentWithRedux } from "../../../service";
 
-const mapDispatchToProps = dispatch => ({
-  write: text => dispatch(addText(text))
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(InputField);
+export default wrapComponentWithRedux(
+  dispatch => ({
+    write: text => dispatch(addText(text))
+  }),
+  InputField
+);
