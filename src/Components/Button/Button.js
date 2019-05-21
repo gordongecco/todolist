@@ -3,7 +3,7 @@ import { Button } from "semantic-ui-react";
 
 const InputField = props => {
   function onClick() {
-    props.click();
+    if (props.click) props.click();
   }
 
   return <Button onClick={onClick} />;

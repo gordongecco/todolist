@@ -1,15 +1,17 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
-import { LoginScene } from "./Scenes";
+import { LoginScene, ListScene } from "./Scenes";
 import { Layout } from "./Components";
 import store from "./store";
 
 function App() {
   return (
     <Provider store={store}>
-      <h1>Hali</h1>
-      <Layout component={LoginScene} />
+      <BrowserRouter>
+        <Layout login={LoginScene} list={ListScene} />
+      </BrowserRouter>
     </Provider>
   );
 }
