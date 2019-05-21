@@ -1,11 +1,11 @@
 import React from "react";
-import { InputField } from "../../Components";
+import { LoginForm } from "../../Components";
 
 const LoginScene = () => {
   return (
     <div>
       <h1>Login</h1>
-      <InputField dani={"asasa"} />
+      <LoginForm />
     </div>
   );
 };
