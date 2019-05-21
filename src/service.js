@@ -1,8 +1,15 @@
-import { connect } from "react-redux";
+import { InputField } from "../../../Components";
 
-export function wrapComponentWithRedux(dispatchFunction, Component) {
+import { connect } from "react-redux";
+import { addText } from "../../../Redux/InputField1/actions";
+
+export function wrapComponentWithRedux(obj,Component) {
+  const mapDispatchToProps = dispatch => ({
+    write: text => dispatch(addText(text))
+  });
+
   return connect(
     null,
-    dispatchFunction
+    mapDispatchToProps
   )(Component);
 }
