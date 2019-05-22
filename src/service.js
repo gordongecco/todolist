@@ -1,8 +1,8 @@
-import store from "./store";
-
-export function validate() {
-  console.log(store.getState());
-  return true;
+function validate(data) {
+  if (data.username === "delldani" && data.password === "password") return true;
+  else return false;
 }
 
-export function valami() {}
+function valami() {}
+
+export { validate, valami };
