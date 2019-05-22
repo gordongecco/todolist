@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Form } from "../ComponentsFromSemantic";
+import validate from "../../service";
 
 const LoginForm = props => {
   function onSubmit(e) {
@@ -8,6 +9,7 @@ const LoginForm = props => {
       username: e.currentTarget.elements["username"].value,
       password: e.currentTarget.elements["password"].value
     });
+    validate();
   }
   return (
     <Form name="loginform" onSubmit={onSubmit}>
