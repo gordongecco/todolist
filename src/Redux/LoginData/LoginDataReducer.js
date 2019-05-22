@@ -1,12 +1,14 @@
 const initialState = {
-  inputField: "h"
+  username: "",
+  password: ""
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD": {
       return {
-        inputField: action.text
+        username: action.username,
+        password: action.password
       };
     }
     default:

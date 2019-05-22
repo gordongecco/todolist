@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
 
-import InputFieldReducer from "./Redux/InputField1";
+import LoginDataReducer from "./Redux/LoginData";
 
 const rootReducer = combineReducers({
-  inputField1: InputFieldReducer
+  LoginData: LoginDataReducer
 });
 
 const store = createStore(
