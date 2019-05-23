@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import List from "./List";
+import ListInput from "./ListInput";
 import { addItem } from "../../Redux/TodoList/actions";
 
 const mapDispatchToProps = dispatch => ({
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   null,
   mapDispatchToProps
-)(List);
+)(ListInput);

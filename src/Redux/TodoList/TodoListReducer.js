@@ -9,7 +9,6 @@ const reducer = (state = initialState, action) => {
         todoList: [...state.todoList, action.item]
       });
     }
-
     default:
       return state;
   }

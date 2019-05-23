@@ -1,0 +1,21 @@
+import * as React from "react";
+import { Form } from "../ComponentsFromSemantic";
+
+import store from "../../store";
+
+const ListInput = props => {
+  function onSubmit(e) {
+    const data = e.currentTarget.elements["iteminput"].value;
+    props.addTodoItem(data);
+    e.currentTarget.elements["iteminput"].value = "";
+    console.log(store.getState().TodoList.todoList);
+  }
+  return (
+    <Form onSubmit={onSubmit}>
+      <input name="iteminput" />
+      <button type="submit">Submit</button>
+    </Form>
+  );
+};
+
+export default ListInput;
