@@ -17,7 +17,7 @@ const LoginForm = props => {
     } else alert("Hibás jelszó vagy felhasználónév !");
   }
   return (
-    <Form name="loginform" onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
       <input name="username" placeholder="Username" />
       <input name="password" placeholder="Password" />
       <button type="submit">Submit</button>

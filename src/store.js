@@ -1,10 +1,11 @@
 import { createStore, combineReducers } from "redux";
 
-import { LoginDataReducer, IsValidateReducer } from "./Redux";
+import { LoginDataReducer, IsValidateReducer, TodoListReducer } from "./Redux";
 
 const rootReducer = combineReducers({
   LoginData: LoginDataReducer,
-  Validate: IsValidateReducer
+  Validate: IsValidateReducer,
+  TodoList: TodoListReducer
 });
 
 const store = createStore(
