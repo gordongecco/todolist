@@ -8,7 +8,6 @@ const ListInput = props => {
     const data = e.currentTarget.elements["iteminput"].value;
     props.addTodoItem(data);
     e.currentTarget.elements["iteminput"].value = "";
-    console.log(store.getState().TodoList.todoList);
   }
   return (
     <Form onSubmit={onSubmit}>

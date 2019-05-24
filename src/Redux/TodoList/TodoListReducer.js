@@ -9,6 +9,15 @@ const reducer = (state = initialState, action) => {
         todoList: [...state.todoList, action.item]
       });
     }
+    case "DELETEITEM": {
+      const array = [...state.todoList];
+      array.splice(action.item, 1);
+      return { todoList: array };
+
+      // return Object.assign({}, state, {
+      //   todoList: state.todoList.splice(action.item, 1)
+      // });
+    }
     default:
       return state;
   }
