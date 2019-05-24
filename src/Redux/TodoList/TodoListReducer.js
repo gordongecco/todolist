@@ -13,10 +13,6 @@ const reducer = (state = initialState, action) => {
       const array = [...state.todoList];
       array.splice(action.item, 1);
       return { todoList: array };
-
-      // return Object.assign({}, state, {
-      //   todoList: state.todoList.splice(action.item, 1)
-      // });
     }
     default:
       return state;
