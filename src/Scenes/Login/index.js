@@ -1,1 +1,1 @@
-export { default } from './LoginScene.js';
+export { default } from "./LoginScene";

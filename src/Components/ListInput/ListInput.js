@@ -1,8 +1,6 @@
 import * as React from "react";
 import { Form } from "../ComponentsFromSemantic";
 
-import store from "../../store";
-
 const ListInput = props => {
   function onSubmit(e) {
     const data = e.currentTarget.elements["iteminput"].value;
