@@ -6,9 +6,8 @@ const ModalInput = props => {
     props.changeItem(data, props.index);
     props.setModal();
   }
-  console.log(props.index);
   return (
-    <Modal size="mini" open={props.openModal}>
+    <Modal basic size="mini" open={props.openModal}>
       <Modal.Content>
         <p>halo modal</p>
         <Form onSubmit={onSubmit}>
