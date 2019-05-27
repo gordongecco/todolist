@@ -1,1 +1,1 @@
-export { Input, Button, Form } from "semantic-ui-react";
+export { Input, Button, Form, Modal } from "semantic-ui-react";

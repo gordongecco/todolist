@@ -11,3 +11,11 @@ export function deleteItem(todoItem) {
     item: todoItem
   };
 }
+
+export function changeItem(todoItem, todoIndex) {
+  return {
+    type: "CHANGEITEM",
+    item: todoItem,
+    index: todoIndex
+  };
+}

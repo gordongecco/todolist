@@ -14,6 +14,11 @@ const reducer = (state = initialState, action) => {
       array.splice(action.item, 1);
       return { todoList: array };
     }
+    case "CHANGEITEM": {
+      const array = [...state.todoList];
+      array.splice(action.index, 1, action.item);
+      return { todoList: array };
+    }
     default:
       return state;
   }
