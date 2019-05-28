@@ -9,7 +9,7 @@ const ModalInput = props => {
   return (
     <Modal basic size="mini" open={props.openModal}>
       <Modal.Content>
-        <p>halo modal</p>
+        <p>New todo :</p>
         <Form onSubmit={onSubmit}>
           <input name="iteminput" />
           <button type="submit">Save</button>

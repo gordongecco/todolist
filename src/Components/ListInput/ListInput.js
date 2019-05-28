@@ -10,7 +10,7 @@ const ListInput = props => {
   return (
     <Form onSubmit={onSubmit}>
       <input name="iteminput" />
-      <button type="submit">Submit</button>
+      <button type="submit">Save</button>
     </Form>
   );
 };
