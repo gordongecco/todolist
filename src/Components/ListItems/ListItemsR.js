@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 
 import ListItems from "./ListItems";
-import { deleteItem } from "../../Redux/TodoList/actions";
-import { setModal } from "../../Redux/ModalInput/actions";
+import { deleteItem, setModal } from "../../Redux/allActions";
 
 const mapStateToProps = state => ({
   items: state.TodoList.todoList,

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ModalInput } from "../../Components";
+
 const ListItems = props => {
   function onDelete(e) {
     const target = e.currentTarget;
@@ -23,7 +23,6 @@ const ListItems = props => {
   return (
     <div>
       <ul>{items}</ul>
-      <ModalInput />
     </div>
   );
 };

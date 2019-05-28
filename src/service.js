@@ -1,5 +1,5 @@
 function validate(data) {
-  if (data.username === "delldani" && data.password === "password") return true;
+  if (data.username === "username" && data.password === "password") return true;
   else return false;
 }
 

@@ -14,7 +14,7 @@ const LoginForm = props => {
     if (validate(data)) {
       props.onValidate();
       props.history.push("/list");
-    } else alert("Hibás jelszó vagy felhasználónév !");
+    } else props.setModal();
   }
   return (
     <Form onSubmit={onSubmit}>
