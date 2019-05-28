@@ -3,6 +3,4 @@ function validate(data) {
   else return false;
 }
 
-function valami() {}
-
-export { validate, valami };
+export { validate };
