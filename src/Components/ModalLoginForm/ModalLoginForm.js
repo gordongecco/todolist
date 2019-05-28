@@ -7,7 +7,7 @@ const ModaLoginForm = props => {
   return (
     <Modal basic size="mini" open={props.openModal}>
       <Modal.Content>
-        <p>False Username or Password !</p>
+        <p>Username or Password is incorrect!</p>
         <button onClick={onClick}>Close</button>
       </Modal.Content>
     </Modal>
