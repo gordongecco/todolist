@@ -1,3 +1,5 @@
+import update from "immutability-helper";
+
 const initialState = {
   todoList: []
 };
@@ -5,19 +7,19 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADDITEM": {
-      return Object.assign({}, state, {
-        todoList: [...state.todoList, action.item]
-      });
+      return { todoList: update(state.todoList, { $push: [action.item] }) };
     }
     case "DELETEITEM": {
-      const array = [...state.todoList];
-      array.splice(action.item, 1);
-      return { todoList: array };
+      return {
+        todoList: update(state.todoList, { $splice: [[action.item, 1]] })
+      };
     }
     case "CHANGEITEM": {
-      const array = [...state.todoList];
-      array.splice(action.index, 1, action.item);
-      return { todoList: array };
+      return {
+        todoList: update(state.todoList, {
+          $splice: [[action.index, 1, action.item]]
+        })
+      };
     }
     default:
       return state;
