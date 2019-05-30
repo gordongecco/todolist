@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Modal } from "../ComponentsFromSemantic";
+import { Modal } from "../componentsFromSemantic";
 const ModaLoginForm = props => {
   function onClick() {
     props.setModal();

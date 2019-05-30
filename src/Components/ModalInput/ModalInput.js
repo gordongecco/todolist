@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Modal, Form } from "../ComponentsFromSemantic";
+import { Modal, Form } from "../componentsFromSemantic";
 const ModalInput = props => {
   function onSubmit(e) {
     const data = e.currentTarget.elements["iteminput"].value;

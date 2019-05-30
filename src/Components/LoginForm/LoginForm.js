@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Form } from "../ComponentsFromSemantic";
+import { Form } from "../componentsFromSemantic";
 import { withRouter } from "react-router";
 
 import { validate } from "../../service";
