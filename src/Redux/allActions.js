@@ -1,10 +1,10 @@
-export { onValidate } from "./IsValidate/actions";
-export { offValidate } from "./IsValidate/actions";
+export { onValidate } from "./isValidate/actions";
+export { offValidate } from "./isValidate/actions";
 export { addData } from "../Components/LoginForm/LoginFormState/actions";
 export { setModal } from "../Components/ModalInput/ModalInputState/actions";
-export { addItem } from "./TodoList/actions";
-export { deleteItem } from "./TodoList/actions";
-export { changeItem } from "./TodoList/actions";
+export { addItem } from "./todoList/actions";
+export { deleteItem } from "./todoList/actions";
+export { changeItem } from "./todoList/actions";
 export {
   setModalLoginForm
 } from "../Components/ModalLoginForm/ModalLoginFormState/actions";

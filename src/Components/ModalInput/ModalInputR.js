@@ -5,7 +5,8 @@ import { setModal, changeItem } from "../../Redux/allActions";
 
 const mapStateToProps = state => ({
   openModal: state.ModalInput.visible,
-  index: state.ModalInput.index
+  index: state.ModalInput.index,
+  todos: state.TodoList.todoList
 });
 
 const mapDispatchToProps = dispatch => ({
