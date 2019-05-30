@@ -1,3 +1,5 @@
+import update from "immutability-helper";
+
 const initialState = {
   visible: false
 };
@@ -6,7 +8,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "SETMODALLOGINFORM": {
       return {
-        visible: !state.visible
+        visible: update(state.visible, { $apply: x => !x })
       };
     }
 
