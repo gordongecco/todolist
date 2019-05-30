@@ -1,10 +1,10 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
-import { LoginScene, ListScene, HomeScene } from './Scenes';
-import { Layout } from './Components';
-import store from './store';
+import { LoginScene, ListScene, HomeScene } from "./Scenes";
+import { Layout } from "./Components";
+import store from "./store";
 
 function App() {
   return (
