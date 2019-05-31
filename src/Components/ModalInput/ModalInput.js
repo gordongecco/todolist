@@ -11,7 +11,7 @@ const ModalInput = props => {
       <Modal.Content>
         <p>New todo :</p>
         <Form onSubmit={onSubmit}>
-          <input placeholder={props.todos[props.index]} name="iteminput" />
+          <input defaultValue={props.todos[props.index]} name="iteminput" />
           <button type="submit">Save</button>
         </Form>
       </Modal.Content>
