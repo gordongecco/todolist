@@ -7,5 +7,5 @@ export {
 export {
   default as ModalLoginFormReducer
 } from "../Components/ModalLoginForm/ModalLoginFormState";
-export { default as IsValidateReducer } from "./IsValidate";
-export { default as TodoListReducer } from "./TodoList";
+export { default as IsValidateReducer } from "./isValidate";
+export { default as TodoListReducer } from "./todoList";
