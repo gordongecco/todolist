@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
 
 import {
   LoginDataReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   Validate: IsValidateReducer,
   TodoList: TodoListReducer,
   ModalInput: ModalInputReducer,
-  ModalLoginForm: ModalLoginFormReducer
+  ModalLoginForm: ModalLoginFormReducer,
+  form: formReducer
 });
 
 const store = createStore(
