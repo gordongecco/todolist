@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Form } from "../componentsFromSemantic";
 import { withRouter } from "react-router";
+import { Field, reduxForm } from "redux-form";
 
 import { validate } from "../../service";
 
@@ -18,8 +19,8 @@ const LoginForm = props => {
   }
   return (
     <Form onSubmit={onSubmit}>
-      <input name="username" placeholder="Username" />
-      <input name="password" placeholder="Password" />
+      <Field name="username" component="input" type="text" />
+      <Field name="password" component="input" type="text" />
       <button type="submit">Submit</button>
     </Form>
   );
@@ -27,4 +28,9 @@ const LoginForm = props => {
 
 const LoginFormWitRouter = withRouter(LoginForm);
 
-export default LoginFormWitRouter;
+const LoginFormWitReduxForm = reduxForm({
+  form: "contact",
+  destroyOnUnmount: false
+})(LoginFormWitRouter);
+
+export default LoginFormWitReduxForm;
