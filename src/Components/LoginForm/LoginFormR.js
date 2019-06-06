@@ -1,7 +1,12 @@
 import { connect } from "react-redux";
+import { getFormValues } from "redux-form";
 
 import LoginForm from "./LoginForm";
 import { addData, onValidate, setModalLoginForm } from "../../Redux/allActions";
+
+const mapStateToProps = state => ({
+  fieldData: getFormValues("loginForm")(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   setData: Text => dispatch(addData(Text)),
@@ -10,6 +15,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(LoginForm);

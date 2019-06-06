@@ -6,10 +6,10 @@ import { Field, reduxForm } from "redux-form";
 import { validate } from "../../service";
 
 const LoginForm = props => {
-  function onSubmit(e) {
+  function onSubmit() {
     const data = {
-      username: e.currentTarget.elements["username"].value,
-      password: e.currentTarget.elements["password"].value
+      username: props.fieldData.username,
+      password: props.fieldData.password
     };
     props.setData(data);
     if (validate(data)) {
@@ -29,7 +29,7 @@ const LoginForm = props => {
 const LoginFormWitRouter = withRouter(LoginForm);
 
 const LoginFormWitReduxForm = reduxForm({
-  form: "contact",
+  form: "loginForm",
   destroyOnUnmount: false
 })(LoginFormWitRouter);
 
