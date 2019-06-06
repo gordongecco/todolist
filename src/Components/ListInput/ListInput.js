@@ -3,10 +3,9 @@ import { Form } from "../componentsFromSemantic";
 import { Field, reduxForm } from "redux-form";
 
 const ListInput = props => {
-  function onSubmit(e) {
-    const data = e.currentTarget.elements["iteminput"].value;
+  function onSubmit() {
+    const data = props.fieldData.iteminput;
     props.addTodoItem(data);
-    e.currentTarget.elements["iteminput"].value = "";
     props.clear();
   }
   return (

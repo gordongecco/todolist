@@ -1,8 +1,12 @@
 import { connect } from "react-redux";
-import { clearFields } from "redux-form";
+import { clearFields, getFormValues } from "redux-form";
 
 import ListInput from "./ListInput";
 import { addItem } from "../../Redux/allActions";
+
+const mapStateToProps = state => ({
+  fieldData: getFormValues("listInputForm")(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   addTodoItem: Item => dispatch(addItem(Item)),
@@ -10,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(ListInput);
