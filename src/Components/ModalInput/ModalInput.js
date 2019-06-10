@@ -73,9 +73,15 @@ const ModalInput = props => {
 //   }
 // }
 
-const ModalInputReduxForm = reduxForm({
-  form: "modalInputForm",
-  enableReinitialize: true
-})(ModalInput);
+const ModalInputReduxForm = reduxForm(
+  {
+    form: "modalInputForm",
+    enableReinitialize: true
+  }
+  // ,
+  // {
+  //   enableReinitialize: true
+  // }
+)(ModalInput);
 
 export default ModalInputReduxForm;
