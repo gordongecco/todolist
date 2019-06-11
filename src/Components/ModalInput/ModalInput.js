@@ -3,21 +3,30 @@ import { Field, reduxForm } from "redux-form";
 import { Modal, Form } from "../componentsFromSemantic";
 
 const ModalInput = props => {
+  const {
+    change,
+    todos,
+    index,
+    changeItem,
+    setModal,
+    clear,
+    openModal,
+    handleSubmit
+  } = props;
   function onMount() {
-    props.change("modaliteminput", props.todos[props.index]);
+    change("modaliteminput", todos[index]);
   }
 
-  function onSubmit(e) {
-    const data = e.currentTarget.elements["modaliteminput"].value;
-    props.changeItem(data, props.index);
-    props.setModal();
-    props.clear();
+  function submit(values) {
+    changeItem(values.modaliteminput, index);
+    setModal();
+    clear();
   }
   return (
-    <Modal basic size="mini" open={props.openModal} onMount={onMount}>
+    <Modal basic size="mini" open={openModal} onMount={onMount}>
       <Modal.Content>
         <p>New todo :</p>
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={handleSubmit(submit)}>
           <Field name="modaliteminput" component="input" type="text" />
           <button type="submit">Save</button>
         </Form>

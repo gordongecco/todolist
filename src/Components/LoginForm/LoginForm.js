@@ -6,19 +6,22 @@ import { Field, reduxForm } from "redux-form";
 import { validate } from "../../service";
 
 const LoginForm = props => {
-  function onSubmit() {
+  const { setData, onValidate, history, setModal, handleSubmit } = props;
+  function submit(values) {
     const data = {
-      username: props.fieldData.username,
-      password: props.fieldData.password
+      username: values.username,
+      password: values.password
     };
-    props.setData(data);
-    if (validate(data)) {
-      props.onValidate();
-      props.history.push("/list");
-    } else props.setModal();
+    const fns = () => {
+      setData(data);
+      onValidate();
+      history.push("/list");
+    };
+    (validate(data) ? fns : setModal)();
   }
+
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={handleSubmit(submit)}>
       <Field name="username" component="input" type="text" />
       <Field name="password" component="input" type="text" />
       <button type="submit">Submit</button>

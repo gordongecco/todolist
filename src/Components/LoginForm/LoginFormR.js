@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
-import { getFormValues } from "redux-form";
+import { getFormValues, isDirty } from "redux-form";
 
 import LoginForm from "./LoginForm";
 import { addData, onValidate, setModalLoginForm } from "../../Redux/allActions";
 
 const mapStateToProps = state => ({
-  fieldData: getFormValues("loginForm")(state)
+  fieldData: getFormValues("loginForm")(state),
+  usernameDirty: isDirty("loginForm")(state, ["username"])
 });
 
 const mapDispatchToProps = dispatch => ({
