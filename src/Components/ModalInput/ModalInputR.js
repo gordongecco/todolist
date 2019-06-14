@@ -11,9 +11,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setModal: () => dispatch(setModal(null)),
+  changeModalVisible: () => dispatch(setModal(null)),
   changeItem: (todoItem, index) => dispatch(changeItem(todoItem, index)),
-  clear: () =>
+  clearFields: () =>
     dispatch(clearFields("modalInputForm", false, false, "modaliteminput"))
 });
 

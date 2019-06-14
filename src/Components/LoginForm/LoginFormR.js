@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   setData: Text => dispatch(addData(Text)),
   onValidate: () => dispatch(onValidate),
-  setModal: () => dispatch(setModalLoginForm)
+  changeModalVisible: () => dispatch(setModalLoginForm)
 });
 
 export default connect(

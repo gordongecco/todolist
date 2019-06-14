@@ -6,7 +6,13 @@ import { Field, reduxForm } from "redux-form";
 import { validate } from "../../service";
 
 const LoginForm = props => {
-  const { setData, onValidate, history, setModal, handleSubmit } = props;
+  const {
+    setData,
+    onValidate,
+    history,
+    changeModalVisible,
+    handleSubmit
+  } = props;
   function submit(values) {
     const data = {
       username: values.username,
@@ -17,7 +23,7 @@ const LoginForm = props => {
       onValidate();
       history.push("/list");
     };
-    (validate(data) ? fns : setModal)();
+    (validate(data) ? fns : changeModalVisible)();
   }
 
   return (

@@ -8,8 +8,8 @@ const ModalInput = props => {
     todos,
     index,
     changeItem,
-    setModal,
-    clear,
+    changeModalVisible,
+    clearFields,
     openModal,
     handleSubmit
   } = props;
@@ -19,8 +19,8 @@ const ModalInput = props => {
 
   function submit(values) {
     changeItem(values.modaliteminput, index);
-    setModal();
-    clear();
+    changeModalVisible();
+    clearFields();
   }
   return (
     <Modal basic size="mini" open={openModal} onMount={onMount}>

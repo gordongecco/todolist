@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addTodoItem: Item => dispatch(addItem(Item)),
-  clear: () => dispatch(clearFields("listInputForm", false, false, "iteminput"))
+  clearFields: () =>
+    dispatch(clearFields("listInputForm", false, false, "iteminput"))
 });
 
 export default connect(
