@@ -3,10 +3,10 @@ import { Form } from "../componentsFromSemantic";
 import { Field, reduxForm } from "redux-form";
 
 const ListInput = props => {
-  const { addTodoItem, clearFields, handleSubmit } = props;
+  const { addTodoItem, handleSubmit, clearFields } = props;
   function submit(values) {
     addTodoItem(values.iteminput);
-    clearFields();
+    clearFields("listInputForm", false, false, "iteminput");
   }
   return (
     <Form onSubmit={handleSubmit(submit)}>

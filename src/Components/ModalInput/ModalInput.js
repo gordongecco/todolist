@@ -9,9 +9,9 @@ const ModalInput = props => {
     index,
     changeItem,
     changeModalVisible,
-    clearFields,
     openModal,
-    handleSubmit
+    handleSubmit,
+    clearFields
   } = props;
   function onMount() {
     change("modaliteminput", todos[index]);
@@ -20,7 +20,7 @@ const ModalInput = props => {
   function submit(values) {
     changeItem(values.modaliteminput, index);
     changeModalVisible();
-    clearFields();
+    clearFields("modalInputForm", false, false, "modaliteminput");
   }
   return (
     <Modal basic size="mini" open={openModal} onMount={onMount}>
