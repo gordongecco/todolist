@@ -1,3 +1,5 @@
+export const SET_MODAL_LOGIN_FORM = "ModalLoginFormState";
+
 export const setModalLoginForm = {
-  type: "SETMODALLOGINFORM"
+  type: SET_MODAL_LOGIN_FORM
 };

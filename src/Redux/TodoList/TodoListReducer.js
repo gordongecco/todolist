@@ -1,3 +1,5 @@
+import { ADD_ITEM, DELETE_ITEM, CHANGE_ITEM } from "./actions";
+
 import update from "immutability-helper";
 
 const initialState = {
@@ -6,15 +8,15 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADDITEM": {
+    case ADD_ITEM: {
       return { todoList: update(state.todoList, { $push: [action.item] }) };
     }
-    case "DELETEITEM": {
+    case DELETE_ITEM: {
       return {
         todoList: update(state.todoList, { $splice: [[action.item, 1]] })
       };
     }
-    case "CHANGEITEM": {
+    case CHANGE_ITEM: {
       return {
         todoList: update(state.todoList, {
           $splice: [[action.index, 1, action.item]]

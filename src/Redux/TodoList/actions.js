@@ -1,20 +1,24 @@
+export const ADD_ITEM = "todolist/addItem";
+export const DELETE_ITEM = "todolist/deleteItem";
+export const CHANGE_ITEM = "todolist/changeItem";
+
 export function addItem(todoItem) {
   return {
-    type: "ADDITEM",
+    type: ADD_ITEM,
     item: todoItem
   };
 }
 
 export function deleteItem(todoItem) {
   return {
-    type: "DELETEITEM",
+    type: DELETE_ITEM,
     item: todoItem
   };
 }
 
 export function changeItem(todoItem, todoIndex) {
   return {
-    type: "CHANGEITEM",
+    type: CHANGE_ITEM,
     item: todoItem,
     index: todoIndex
   };

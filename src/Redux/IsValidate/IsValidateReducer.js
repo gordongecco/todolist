@@ -1,15 +1,17 @@
+import { ON, OFF } from "./actions";
+
 const initialState = {
   validate: false
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ON": {
+    case ON: {
       return {
         validate: true
       };
     }
-    case "OFF": {
+    case OFF: {
       return {
         validate: false
       };
