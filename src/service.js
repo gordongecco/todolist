@@ -1,9 +1,9 @@
 import { sendLoginData } from "./Db";
 
-function validate(data) {
-  sendLoginData(data).then(response => console.log(response));
-  if (data.username === "username" && data.password === "password") return true;
-  else return false;
+async function validate(data) {
+  const token = await sendLoginData(data);
+  if (token) return token;
+  else return null;
 }
 
 export { validate };

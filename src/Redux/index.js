@@ -9,3 +9,4 @@ export {
 } from "../Components/ModalLoginForm/ModalLoginFormState";
 export { default as IsValidateReducer } from "./isValidate";
 export { default as TodoListReducer } from "./todoList";
+export { default as TokenReducer } from "./token";

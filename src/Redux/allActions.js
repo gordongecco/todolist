@@ -8,3 +8,4 @@ export { changeItem } from "./todoList/actions";
 export {
   setModalLoginForm
 } from "../Components/ModalLoginForm/ModalLoginFormState/actions";
+export { setToken } from "./token/actions";

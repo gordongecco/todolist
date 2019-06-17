@@ -6,7 +6,8 @@ import {
   IsValidateReducer,
   TodoListReducer,
   ModalInputReducer,
-  ModalLoginFormReducer
+  ModalLoginFormReducer,
+  TokenReducer
 } from "./Redux";
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   TodoList: TodoListReducer,
   ModalInput: ModalInputReducer,
   ModalLoginForm: ModalLoginFormReducer,
+  Token: TokenReducer,
   form: formReducer
 });
 

@@ -11,19 +11,24 @@ const LoginForm = props => {
     onValidate,
     history,
     changeModalVisible,
-    handleSubmit
+    handleSubmit,
+    setTokenItem
   } = props;
-  function submit(values) {
+
+  async function submit(values) {
     const data = {
       username: values.username,
       password: values.password
     };
+    const token = await validate(data);
+
     const fns = () => {
+      setTokenItem(token);
       setData(data);
       onValidate();
       history.push("/list");
     };
-    (validate(data) ? fns : changeModalVisible)();
+    (token ? fns : changeModalVisible)();
   }
 
   return (
