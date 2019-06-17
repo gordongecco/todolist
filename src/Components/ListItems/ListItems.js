@@ -1,15 +1,16 @@
 import * as React from "react";
 
 const ListItems = props => {
+  const { deleteTodoItem, setModal, items } = props;
   function onDelete(e) {
     const target = e.currentTarget;
-    props.deleteTodoItem(target.id);
+    deleteTodoItem(target.id);
   }
   function onChange(e) {
     const target = e.currentTarget;
-    props.setModal(target.id);
+    setModal(target.id);
   }
-  const items = props.items.map((item, index) => (
+  const todoItems = items.map((item, index) => (
     <div>
       <li key={index}>{item}</li>
       <button id={index} onClick={onDelete}>
@@ -22,7 +23,7 @@ const ListItems = props => {
   ));
   return (
     <div>
-      <ul>{items}</ul>
+      <ul>{todoItems}</ul>
     </div>
   );
 };

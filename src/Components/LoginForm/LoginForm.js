@@ -7,7 +7,7 @@ import { validate } from "../../service";
 
 const LoginForm = props => {
   const {
-    setData,
+    setLoginData,
     onValidate,
     history,
     changeModalVisible,
@@ -24,7 +24,7 @@ const LoginForm = props => {
 
     const fns = () => {
       setTokenItem(token);
-      setData(data);
+      setLoginData(data);
       onValidate();
       history.push("/list");
     };

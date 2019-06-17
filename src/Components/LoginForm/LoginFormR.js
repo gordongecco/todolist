@@ -2,14 +2,14 @@ import { connect } from "react-redux";
 
 import LoginForm from "./LoginForm";
 import {
-  addData,
+  addLoginData,
   onValidate,
   setModalLoginForm,
   setToken
 } from "../../Redux/allActions";
 
 const mapDispatchToProps = dispatch => ({
-  setData: Text => dispatch(addData(Text)),
+  setLoginData: Text => dispatch(addLoginData(Text)),
   onValidate: () => dispatch(onValidate),
   changeModalVisible: () => dispatch(setModalLoginForm),
   setTokenItem: token => dispatch(setToken(token))
