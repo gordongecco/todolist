@@ -1,17 +1,21 @@
-// async function fetchData(token) {
-//   let response = await fetch("http://localhost:8080/", {
-//     headers: {
-//       Authorization: token
-//     }
-//   });
+async function fetchData(token) {
+  try {
+    let response = await fetch("http://localhost:8080/", {
+      headers: {
+        Authorization: token
+      }
+    });
 
-//   if (response.status == 200) {
-//     let data = response.json();
-//     return data;
-//   } else {
-//     return null;
-//   }
-// }
+    if (response.status == 200) {
+      let data = response.json();
+      return data;
+    } else {
+      return response.status;
+    }
+  } catch (err) {
+    return null;
+  }
+}
 
 // async function sendData(arrayList, token) {
 //   let data = { array: arrayList };
@@ -36,14 +40,14 @@ async function sendLoginData(data) {
       },
       body: JSON.stringify(data)
     });
+    if (response.status == 200) {
+      let t = await response.json();
+
+      return t.token;
+    } else return response.status;
   } catch (err) {
     return null;
   }
-  if (response.status == 200) {
-    let t = await response.json();
-
-    return t.token;
-  } else return null;
 }
 
-export { sendLoginData };
+export { sendLoginData, fetchData };

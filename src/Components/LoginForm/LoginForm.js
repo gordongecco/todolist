@@ -3,7 +3,7 @@ import { Form } from "../componentsFromSemantic";
 import { withRouter } from "react-router";
 import { Field, reduxForm } from "redux-form";
 
-import { validate } from "../../service";
+import { validate, fillTodos } from "../../service";
 
 const LoginForm = props => {
   const {
@@ -26,6 +26,7 @@ const LoginForm = props => {
       setTokenItem(token);
       setLoginData(data);
       onValidate();
+      fillTodos(token);
       history.push("/list");
     };
     (token ? fns : changeModalVisible)();
