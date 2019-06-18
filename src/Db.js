@@ -27,14 +27,18 @@
 // }
 
 async function sendLoginData(data) {
-  let response = await fetch("http://localhost:8080/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-
+  let response;
+  try {
+    response = await fetch("http://localhost:8080/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+  } catch (err) {
+    return null;
+  }
   if (response.status == 200) {
     let t = await response.json();
 
