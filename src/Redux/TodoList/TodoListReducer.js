@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     }
     case DELETE_ITEM: {
       return {
-        todoList: update(state.todoList, { $splice: [[action.item, 1]] })
+        todoList: update(state.todoList, { $splice: [[action.index, 1]] })
       };
     }
     case CHANGE_ITEM: {

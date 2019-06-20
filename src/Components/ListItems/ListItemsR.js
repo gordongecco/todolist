@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deleteTodoItem: Item => dispatch(deleteItem(Item)),
+  deleteTodoItem: index => dispatch(deleteItem(index)),
   setModal: index => dispatch(setModal(index))
 });
 

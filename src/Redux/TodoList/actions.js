@@ -9,10 +9,10 @@ export function addItem(todoItem) {
   };
 }
 
-export function deleteItem(todoItem) {
+export function deleteItem(todoIndex) {
   return {
     type: DELETE_ITEM,
-    item: todoItem
+    index: todoIndex
   };
 }
 
