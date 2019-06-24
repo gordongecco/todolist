@@ -2,11 +2,29 @@ import * as React from "react";
 import { Form } from "../componentsFromSemantic";
 import { Field, reduxForm } from "redux-form";
 
+import { fillDatabaseArray } from "../../service";
+
 const ListInput = props => {
-  const { addTodoItem, handleSubmit, clearFields } = props;
+  const {
+    addTodoItem,
+    handleSubmit,
+    clearFields,
+    todoList,
+    username,
+    token,
+    addTodoItemToState
+  } = props;
   function submit(values) {
-    addTodoItem(values.iteminput);
+    addTodoItemToState(todoList, values.iteminput).then(res =>
+      console.log(todoList)
+    );
+    // addTodoItem(values.iteminput);
+    // let t = [...todoList];
+    // t.push(values.iteminput);
+    // console.log(t);
+
     clearFields("listInputForm", false, false, "iteminput");
+    // fillDatabaseArray(todoList, token, username);
   }
   return (
     <Form onSubmit={handleSubmit(submit)}>

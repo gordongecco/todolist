@@ -11,3 +11,5 @@ export {
 export { setToken } from "./token/actions";
 export { fillTodoList } from "./todoList/actions";
 export { fillTodoArray } from "./todoList/actions";
+
+export { addTodoItemToState } from "./todoList/actions";

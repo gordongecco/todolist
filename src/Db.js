@@ -13,18 +13,18 @@ async function fetchData(token) {
   }
 }
 
-// async function sendData(arrayList, token) {
-//   let data = { array: arrayList };
+async function sendData(arrayList, token) {
+  let data = { array: arrayList };
 
-//   fetch("http://localhost:8080/", {
-//     method: "POST",
-//     body: JSON.stringify(data),
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: token
-//     }
-//   });
-// }
+  fetch("http://localhost:8080/", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token
+    }
+  });
+}
 
 async function sendLoginData(data) {
   let response;
@@ -46,4 +46,4 @@ async function sendLoginData(data) {
   } else return null;
 }
 
-export { sendLoginData, fetchData };
+export { sendLoginData, fetchData, sendData };

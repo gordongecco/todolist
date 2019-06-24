@@ -11,6 +11,13 @@ export function addItem(todoItem) {
   };
 }
 
+export function addTodoItemToState(array, todoItem) {
+  return function(dispatch) {
+    array.push(todoItem);
+    return Promise.resolve();
+  };
+}
+
 export function deleteItem(todoIndex) {
   return {
     type: DELETE_ITEM,
