@@ -2,6 +2,7 @@ export const ADD_ITEM = "todolist/addItem";
 export const DELETE_ITEM = "todolist/deleteItem";
 export const CHANGE_ITEM = "todolist/changeItem";
 export const FILL_TODOLIST = "todolist/fillTodoList";
+export const FILL_TODO_ARRAY = "todolist/fillTodoArray";
 
 export function addItem(todoItem) {
   return {
@@ -25,6 +26,13 @@ export function changeItem(todoItem, todoIndex) {
   };
 }
 
+export function fillTodoArray(todoArray) {
+  return {
+    type: FILL_TODO_ARRAY,
+    array: todoArray
+  };
+}
+
 export function fillTodoList(token) {
   return function(dispatch) {
     return fetch("http://localhost:8080/", {
@@ -33,6 +41,9 @@ export function fillTodoList(token) {
       }
     })
       .then(response => response.json())
-      .then(json => console.log(json));
+      .then(json => {
+        const array = json.array.map(item => item.name);
+        dispatch(fillTodoArray(array));
+      });
   };
 }

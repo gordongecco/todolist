@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, CHANGE_ITEM } from "./actions";
+import { ADD_ITEM, DELETE_ITEM, CHANGE_ITEM, FILL_TODO_ARRAY } from "./actions";
 
 import update from "immutability-helper";
 
@@ -21,6 +21,11 @@ const reducer = (state = initialState, action) => {
         todoList: update(state.todoList, {
           $splice: [[action.index, 1, action.item]]
         })
+      };
+    }
+    case FILL_TODO_ARRAY: {
+      return {
+        todoList: action.array
       };
     }
     default:
