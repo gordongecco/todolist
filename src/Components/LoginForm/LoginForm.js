@@ -13,7 +13,8 @@ const LoginForm = props => {
     history,
     changeModalVisible,
     handleSubmit,
-    setTokenItem
+    setTokenItem,
+    fillTodos
   } = props;
 
   async function submit(values) {
@@ -27,6 +28,7 @@ const LoginForm = props => {
       setTokenItem(token);
       setLoginData(data);
       onValidate();
+      fillTodos(token);
       history.push("/list");
     } else {
       changeModalVisible();

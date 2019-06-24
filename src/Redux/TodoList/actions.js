@@ -1,6 +1,7 @@
 export const ADD_ITEM = "todolist/addItem";
 export const DELETE_ITEM = "todolist/deleteItem";
 export const CHANGE_ITEM = "todolist/changeItem";
+export const FILL_TODOLIST = "todolist/fillTodoList";
 
 export function addItem(todoItem) {
   return {
@@ -21,5 +22,17 @@ export function changeItem(todoItem, todoIndex) {
     type: CHANGE_ITEM,
     item: todoItem,
     index: todoIndex
+  };
+}
+
+export function fillTodoList(token) {
+  return function(dispatch) {
+    return fetch("http://localhost:8080/", {
+      headers: {
+        Authorization: token
+      }
+    })
+      .then(response => response.json())
+      .then(json => console.log(json));
   };
 }
