@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import { Field, reduxForm } from "redux-form";
 
 import { validate } from "../../service";
+import {} from "../../Db";
 
 const LoginForm = props => {
   const {
@@ -22,13 +23,14 @@ const LoginForm = props => {
     };
     const token = await validate(data);
 
-    const fns = () => {
+    if (token) {
       setTokenItem(token);
       setLoginData(data);
       onValidate();
       history.push("/list");
-    };
-    (token ? fns : changeModalVisible)();
+    } else {
+      changeModalVisible();
+    }
   }
 
   return (
