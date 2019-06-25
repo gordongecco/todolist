@@ -1,6 +1,9 @@
 import * as React from "react";
 import { Field, reduxForm } from "redux-form";
 import { Modal, Form } from "../componentsFromSemantic";
+import store from "../../store";
+
+import { fillDatabaseArray } from "../../service";
 
 const ModalInput = props => {
   const {
@@ -11,7 +14,9 @@ const ModalInput = props => {
     changeModalVisible,
     openModal,
     handleSubmit,
-    clearFields
+    clearFields,
+    token,
+    username
   } = props;
   function onMount() {
     change("modaliteminput", todos[index]);
@@ -20,6 +25,8 @@ const ModalInput = props => {
   function submit(values) {
     changeItem(values.modaliteminput, index);
     changeModalVisible();
+    const todoList = store.getState().TodoList.todoList;
+    fillDatabaseArray(todoList, token, username);
     clearFields("modalInputForm", false, false, "modaliteminput");
   }
   return (

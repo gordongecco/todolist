@@ -5,7 +5,9 @@ import { deleteItem, setModal } from "../../Redux/allActions";
 
 const mapStateToProps = state => ({
   items: state.TodoList.todoList,
-  openModal: state.ModalInput.visible
+  openModal: state.ModalInput.visible,
+  username: state.LoginData.username,
+  token: state.Token.token
 });
 
 const mapDispatchToProps = dispatch => ({
